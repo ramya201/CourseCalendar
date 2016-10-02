@@ -22,8 +22,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td class="hour-lbl"><span>0.00</span></td>
+    <tr *ngFor="let hour of calendar.days[0].hours">
+      <td class="hour-lbl"><span>{{hour.getDisplayString()}}</span></td>
       <td></td>
       <td></td>
       <td></td>

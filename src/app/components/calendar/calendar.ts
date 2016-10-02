@@ -24,6 +24,12 @@ class Hour {
     this.blocked = false;
     this.course = null;
   }
+
+  getDisplayString(): string {
+    var time = ((this.startTime + 11) % 12 + 1),
+        suffix = this.startTime > 12 ? 'PM' : 'AM';
+    return  time + ":00 " + suffix;
+  }
 }
 
 class Day {

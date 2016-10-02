@@ -18,3 +18,7 @@
   background-color: var(--light-green-color);
   color: var(--white-color);
 }
+
+.calendar-container .hour-lbl {
+  color: var(--brown-color);
+}
