@@ -1,10 +1,10 @@
 :root {
-  --white-color: white;
-  --beige-color: #dddfd4;
-  --light-green-color: #729f98;
-  --light-blue-color: #9ad3de;
-  --brown-color: #7d4627;
-  --black-color: black;
-
-  --dark-grey-label-color: #666666;
+  --cs-white: white;
+  --cs-light-grey: #F5F5F5;
+  --cs-dark-grey: #858585;
+  --cs-yellow: #F5CF87;
+  --cs-orange: #E0995E;
+  --cs-green: #76C2AF;
+  --cs-red: #C75C5C;
+  --cs-black: black;
 }

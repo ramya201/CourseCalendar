@@ -4,6 +4,7 @@
     <li *ngFor="let course of courses" [class.selected]="selectedCourses.indexOf(course) > -1" (click)="onClick(course)">
       <p class="title">{{course.name}}</p>
       <p class="desc">By {{course.author}}</p>
+      <p class="desc">On {{course.days.join(', ')}} from {{course.time[0]}} to {{course.time[1]}}</p>
     </li>
   </ul>
 </div>

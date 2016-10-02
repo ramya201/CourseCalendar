@@ -2,42 +2,72 @@
   max-height: 620px;
   overflow-y: scroll;
   margin: 8px;
+  padding: 0 24px;
 }
 
-.name-container {
+.calendar-container .name-container {
   display: inline-block;
 }
 
-.name-text-box {
+.calendar-container .name-text-box {
   margin: 8px;
   padding: 4px;
 }
 
-.cta {
+.calendar-container .cta {
   float: right;
   margin: 8px;
   cursor: pointer;
 }
 
-.table {
+.calendar-container table {
+  width: 100%;
   border-collapse: collapse;
+  background-color: var(--cs-white);
 }
 
-th, td {
+.calendar-container th {
   padding: 15px;
   text-align: center;
-  border: 1px solid var(--dark-grey-label-color);
+  border: 1px solid transparent;
 }
 
-th {
-  background-color: var(--light-green-color);
-  color: var(--white-color);
+.calendar-container td {
+  padding: 12px;
+  max-width: 150px;
+  max-height: 50px;
+  text-align: center;
+  border: 1px solid var(--cs-dark-grey);
 }
 
-.hour-lbl {
-  color: var(--brown-color);
+.calendar-container th {
+  background-color: var(--cs-green);
+  color: var(--cs-white);
 }
 
-td.selected {
-  background-color: var(--light-blue-color);
+.calendar-container .hour-lbl-td {
+  position: relative;
+  width: 56px;
+  font-size: 12px;
+  color: var(--cs-red);
+  background-color: var(--cs-light-grey);
 }
+
+.calendar-container .hour-lbl {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  font-weight: 700;
+}
+
+.calendar-container td.selected {
+  background-color: var(--cs-orange);
+  border: none;
+}
+
+.calendar-container .selected-course-name {
+  display: inline-block;
+  word-wrap: break-word;
+  font-size: 10px;
+}
+

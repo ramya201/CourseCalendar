@@ -27,8 +27,10 @@
     </thead>
     <tbody>
     <tr *ngFor="let hour of calendar.days[0].hours">
-      <td class="hour-lbl"><span>{{hour.getDisplayString()}}</span></td>
-      <td *ngFor="let day of calendar.days" [class.selected] = "!calendar.getDayByIndex(day.index).hours[hour.startTime].isFree()"></td>
+      <td class="hour-lbl-td"><span class="hour-lbl">{{hour.getDisplayString()}}</span></td>
+      <td *ngFor="let day of calendar.days" [class.selected] = "isHourBlocked(day, hour)">
+          <span class="selected-course-name">{{getSelectedCourseName(day, hour)}}</span>
+      </td>
     </tr>
     </tbody>
   </table>

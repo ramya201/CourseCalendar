@@ -17,30 +17,34 @@
   left: 0;
   margin: 8px 0;
   padding: 8px;
-  height: 40px;
-  background-color: var(--white-color);
-  color: var(--black-color);
+  background-color: var(--cs-white);
+  color: var(--cs-black);
   border-radius: 8px;
 }
 
 .courses .desc {
   margin: 4px 0;
-  color: var(--dark-grey-label-color);
-  font-size: 14px;
+  color: var(--cs-dark-grey);
+  font-size: 12px;
 }
 
 .courses li:hover {
-  background-color: var(--light-blue-color);
+  background-color: var(--cs-yellow);
   left: 4px;
   border-radius: 8px;
 }
 
-.courses li.selected {
-  background-color: var(--light-green-color);
-  color: white;
+.courses li:hover > .desc {
+  color: var(--cs-dark-grey);
 }
 
-.courses li.selected:hover {
-  background-color: var(--light-green-color);
-  color: white;
+.courses li.selected {
+  background-color: var(--cs-orange);
 }
+
+.courses li.selected > .desc {
+  color: var(--cs-light-grey);
+}
+
+
+

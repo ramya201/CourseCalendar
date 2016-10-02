@@ -41,4 +41,19 @@ export class CalendarComponent {
   getNameInputDisplay() {
     return (this.ctaSrc === this.ctaImgUrls.save) ? 'inline-block' : 'none';
   }
+
+  isHourBlocked(day, hour) {
+    return !this.calendar.getDayByIndex(day.index).hours[hour.startTime].isFree()
+  }
+
+  getSelectedCourseName(day, hour) {
+    let hr = this.calendar.getDayByIndex(day.index).hours[hour.startTime];
+    if (!hr.course) {
+      return null;
+    }
+    if (hr.course.timeIndex[0] !== hr.startTime) {
+      return null;
+    }
+    return hr.course.name;
+  }
 }

@@ -12,7 +12,7 @@ import { Calendar } from "./components/calendar/calendar";
 })
 
 export class AppComponent {
-  title = 'Coursera Calendar';
+  title = 'Coursera';
   calendar = new Calendar();
 
   // Adds/removes the course from the calendar when the user selects it.

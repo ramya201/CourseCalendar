@@ -4,20 +4,28 @@ body {
   font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  background-color: var(--beige-color);
-  color: var(--black-color);
+  color: var(--cs-black);
+  background-color: var(--cs-light-grey);
+  margin: 0;
+}
+
+.header {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: var(--cs-white);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 h1 {
   font-size: 18px;
   font-weight: 700;
-  color: var(--black-color);
+  color: var(--cs-black);
 }
 
 h2 {
   font-size: 16px;
   font-weight: 700;
-  color: var(--brown-color);
+  color: var(--cs-red);
 }
 
 p {
@@ -28,16 +36,20 @@ p {
   display: none;
 }
 
+.site-name {
+  display: inline-block;
+  margin: 16px 40px 16px 8px;
+}
+
+#search {
+  padding: 4px;
+  width: 320px;
+  height: 24px;
+  margin-left: 320px;
+  color: var(--cs-dark-grey);
+  border: 1px solid var(--cs-dark-grey);
+}
+
 .app-root {
   margin: 8px;
-}
-
-.sidebar {
-  width: 35%;
-  float: left;
-}
-
-.main {
-  width: 65%;
-  float: left;
 }
