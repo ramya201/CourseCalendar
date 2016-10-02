@@ -24,11 +24,7 @@
     <tbody>
     <tr *ngFor="let hour of calendar.days[0].hours">
       <td class="hour-lbl"><span>{{hour.getDisplayString()}}</span></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td *ngFor="let day of calendar.days" [class.selected] = "isHourBlocked(day, hour)"></td>
     </tr>
     </tbody>
   </table>

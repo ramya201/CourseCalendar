@@ -22,3 +22,7 @@
 .calendar-container .hour-lbl {
   color: var(--brown-color);
 }
+
+td.selected {
+  background-color: var(--light-blue-color);
+}

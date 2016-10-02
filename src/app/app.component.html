@@ -2,7 +2,7 @@
   {{title}}
 </h1>
 <div class="sidebar">
-  <cs-course-list></cs-course-list>
+  <cs-course-list (clicked)="onCourseClick($event)"></cs-course-list>
 </div>
 <div class="main">
   <cs-calendar></cs-calendar>

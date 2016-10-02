@@ -149,5 +149,10 @@ export class Calendar {
       return null;
     }
   }
+
+  isSelected(day: Day, hour: Hour) {
+    //console.log('SelectedCourses:', JSON.stringify(this.selectedCourses));
+    //return !this.getDayByIndex(day.index).hours[hour.startTime].isFree();
+  }
 }
 

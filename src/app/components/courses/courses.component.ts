@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CoursesService } from "./courses.service";
 import { Course } from "./course";
 
@@ -10,16 +10,18 @@ import { Course } from "./course";
 })
 
 export class CoursesComponent {
-  @Input()
+  courses: Course[];
   selectedCourses: Course[] = [];
 
-  courses: Course[];
+  @Output()
+  clicked = new EventEmitter<Course>();
 
   constructor() {
     CoursesService.getCatalogOfCourses().then(courses => this.courses = courses);
   }
 
-  onSelect(course: Course) {
+  onClick(course: Course) {
+    this.clicked.emit(course);
     if (this.selectedCourses.indexOf(course) === -1) {
       this.selectedCourses.push(course);
     } else {
