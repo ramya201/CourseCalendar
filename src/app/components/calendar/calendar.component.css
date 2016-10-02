@@ -1,0 +1,20 @@
+.calendar-container {
+  max-height: 620px;
+  overflow-y: scroll;
+  margin: 8px;
+}
+
+.calendar-container table {
+  border-collapse: collapse;
+}
+
+.calendar-container th, td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid var(--dark-grey-label-color);
+}
+
+.calendar-container th {
+  background-color: var(--light-green-color);
+  color: var(--white-color);
+}

@@ -1,0 +1,10 @@
+<div class="courses-container">
+<h2>Courses offered</h2>
+  <ul class="courses">
+    <li *ngFor="let course of courses" (click)="onSelect(course)">
+      <p class="title">{{course.name}}</p>
+      <p class="desc">By {{course.author}}</p>
+    </li>
+  </ul>
+</div>
+
