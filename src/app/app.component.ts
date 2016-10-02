@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CoursesComponent } from "./components/courses/courses.component";
 import { CalendarComponent } from "./components/calendar/calendar.component";
 import { Course } from "./components/courses/course";
+import { Calendar } from "./components/calendar/calendar";
 
 @Component({
   selector: 'app-root',
@@ -12,9 +13,14 @@ import { Course } from "./components/courses/course";
 
 export class AppComponent {
   title = 'Coursera Calendar';
-  private calendarComponent = new CalendarComponent();
+  calendar = new Calendar();
 
+  // Adds/removes the course from the calendar when the user selects it.
   onCourseClick(course: Course) {
-    return this.calendarComponent.onClickFromCourseList(course);
+    if (this.calendar.courseAlreadyPresent(course)) {
+      return this.calendar.removeCourse(course);
+    } else {
+      this.calendar.addCourse(course);
+    }
   }
 }

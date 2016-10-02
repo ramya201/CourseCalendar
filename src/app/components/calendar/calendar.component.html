@@ -1,5 +1,9 @@
 <div class="calendar-container">
-  <h2>Ramya's calendar</h2>
+  <div class="name-container">
+    <h2 [style.display] = "getNameLabelDisplay()">{{name}}</h2>
+    <input [style.display] = "getNameInputDisplay()" [(ngModel)]="name" class="name-text-box" placeholder="Your calendar"/>
+    <img class="cta" [src]="ctaSrc" height="24" width="24" (click)="onEditName()"/>
+  </div>
   <table>
     <thead>
     <tr>
@@ -24,7 +28,7 @@
     <tbody>
     <tr *ngFor="let hour of calendar.days[0].hours">
       <td class="hour-lbl"><span>{{hour.getDisplayString()}}</span></td>
-      <td *ngFor="let day of calendar.days" [class.selected] = "isHourBlocked(day, hour)"></td>
+      <td *ngFor="let day of calendar.days" [class.selected] = "!calendar.getDayByIndex(day.index).hours[hour.startTime].isFree()"></td>
     </tr>
     </tbody>
   </table>

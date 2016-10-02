@@ -1,6 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Calendar } from './calendar';
-import { Course } from "../courses/course";
 
 @Component({
   selector: 'cs-calendar',
@@ -9,27 +8,37 @@ import { Course } from "../courses/course";
 })
 
 export class CalendarComponent {
+  // Accepts the user's calendar as input from the component displaying the calendar.
+  // Assuming the user is going to save their calendar, this can later be read from the backend API through a service.
+  @Input()
   calendar: Calendar;
 
-  constructor() {
-    this.calendar = new Calendar();
-  }
+  // Assuming our test user is 'Jane Doe', we can display a default calendar name using the user's first name.
+  // This information too would eventually be retrieved from the backend when we start saving user's calendars.
+  @Input()
+  name = "Jane\'s calendar";
 
-  onClickFromCourseList(course: Course) {
-    // If course is already present, it means user is deselecting the course.
-    if (this.calendar.courseAlreadyPresent(course)) {
-      console.log('I am here removing ', course.name);
-      return this.calendar.removeCourse(course);
+  ctaImgUrls = {
+    edit: "../../../assets/images/edit-24x24.png",
+    save: "../../../assets/images/save-24x24.png"
+
+  };
+
+  ctaSrc = this.ctaImgUrls.edit;
+
+  onEditName() {
+    if (this.ctaSrc === this.ctaImgUrls.edit) {
+      this.ctaSrc = this.ctaImgUrls.save;
     } else {
-      console.log('I am here adding ', course.name);
-      this.calendar.addCourse(course);
-      console.log('Selected courses', JSON.stringify(this.calendar.selectedCourses));
-      console.log('Free:', this.calendar.getDayByIndex([course.dayIndex[0]]).hours[course.timeIndex[0]].isFree());
+      this.ctaSrc = this.ctaImgUrls.edit;
     }
   }
 
-  isHourBlocked(day, hour) {
-    console.log('SelectedCourses:', JSON.stringify(this.calendar.selectedCourses));
-    return !this.calendar.getDayByIndex(day.index).hours[hour.startTime].isFree();
+  getNameLabelDisplay() {
+    return (this.ctaSrc === this.ctaImgUrls.edit) ? 'inline-block' : 'none';
+  }
+
+  getNameInputDisplay() {
+    return (this.ctaSrc === this.ctaImgUrls.save) ? 'inline-block' : 'none';
   }
 }

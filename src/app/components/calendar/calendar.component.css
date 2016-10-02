@@ -4,22 +4,37 @@
   margin: 8px;
 }
 
-.calendar-container table {
+.name-container {
+  display: inline-block;
+}
+
+.name-text-box {
+  margin: 8px;
+  padding: 4px;
+}
+
+.cta {
+  float: right;
+  margin: 8px;
+  cursor: pointer;
+}
+
+.table {
   border-collapse: collapse;
 }
 
-.calendar-container th, td {
+th, td {
   padding: 15px;
   text-align: center;
   border: 1px solid var(--dark-grey-label-color);
 }
 
-.calendar-container th {
+th {
   background-color: var(--light-green-color);
   color: var(--white-color);
 }
 
-.calendar-container .hour-lbl {
+.hour-lbl {
   color: var(--brown-color);
 }
 
