@@ -29,13 +29,18 @@
   font-size: 14px;
 }
 
-.courses li.selected:hover {
-  background-color: var(--light-blue-color) !important;
-  color: white;
-}
-
 .courses li:hover {
   background-color: var(--light-blue-color);
   left: 4px;
   border-radius: 8px;
+}
+
+.courses li.selected {
+  background-color: var(--light-green-color);
+  color: white;
+}
+
+.courses li.selected:hover {
+  background-color: var(--light-green-color);
+  color: white;
 }

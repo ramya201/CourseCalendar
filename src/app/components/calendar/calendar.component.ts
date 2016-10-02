@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Calendar } from './calendar';
 
 @Component({
-  selector: 'calendar',
+  selector: 'cs-calendar',
   templateUrl: 'calendar.component.html',
   styleUrls: ['calendar.component.css']
 })

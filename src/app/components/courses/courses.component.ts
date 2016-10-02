@@ -3,7 +3,7 @@ import { CoursesService } from "./courses.service";
 import { Course } from "./course";
 
 @Component({
-  selector: 'course-list',
+  selector: 'cs-course-list',
   templateUrl: 'courses.component.html',
   styleUrls: ['courses.component.css'],
   providers: [CoursesService]
@@ -11,7 +11,7 @@ import { Course } from "./course";
 
 export class CoursesComponent {
   @Input()
-  selectedCourses: Course[];
+  selectedCourses: Course[] = [];
 
   courses: Course[];
 
