@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { CoursesService } from "./courses.service";
-import { Course } from "./course";
+import { Course } from "./course.model";
 
 @Component({
   selector: 'cs-course-list',

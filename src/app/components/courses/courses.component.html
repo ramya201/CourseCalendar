@@ -6,10 +6,12 @@
       <p class="title">{{course.name}}</p>
       <p class="desc">By {{course.author}}</p>
       <p class="desc">On {{course.days.join(', ')}} from {{course.time[0]}} to {{course.time[1]}}</p>
-      <p class="error" *ngIf="conflictedCourse === course">
-        <img src="../../../assets/images/error-16x16.png" height="16" width="16"/>
-        This course conflicts with an already selected one!
+      <div class="error-container" *ngIf="conflictedCourse === course">
+        <p class="error">
+          <img src="../../../assets/images/error-16x16.png" height="16" width="16"/>
+          This course conflicts with an already selected one!
         </p>
+      </div>
     </li>
   </ul>
 </div>

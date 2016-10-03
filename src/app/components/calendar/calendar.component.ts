@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { Calendar } from './calendar';
-import { Course } from "../courses/course";
+import { Calendar } from './calendar.model';
+import { Course } from "../courses/course.model";
 
 @Component({
   selector: 'cs-calendar',
