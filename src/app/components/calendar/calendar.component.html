@@ -26,10 +26,15 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let hour of calendar.days[0].hours">
-      <td class="hour-lbl-td"><span class="hour-lbl">{{hour.getDisplayString()}}</span></td>
+    <tr *ngFor="let hour of calendar.days[0].hours.slice(7, 19)">
+      <td class="hour-lbl-td">
+        <span class="hour-lbl">{{hour.getDisplayString()}}</span>
+      </td>
       <td *ngFor="let day of calendar.days" [class.selected] = "isHourBlocked(day, hour)">
-          <span class="selected-course-name">{{getSelectedCourseName(day, hour)}}</span>
+          <span class="selected-course-name">
+            {{getSelectedCourseName(day, hour)}}
+            <span *ngIf="getSelectedCourseName(day, hour)" class="remove" (click)="onClick(getCourseFromDayAndHour(day, hour))">&times;</span>
+          </span>
       </td>
     </tr>
     </tbody>

@@ -1,10 +1,15 @@
 <div class="courses-container">
-<h2>Courses offered</h2>
+  <h2>Courses offered</h2>
+  <input placeholder="Search by course name or author name...." (input)="filterCourses($event.target.value)" >
   <ul class="courses">
-    <li *ngFor="let course of courses" [class.selected]="selectedCourses.indexOf(course) > -1" (click)="onClick(course)">
+    <li *ngFor="let course of filteredCourses" [class.selected]="selectedCourses.indexOf(course) > -1" (click)="onClick(course)">
       <p class="title">{{course.name}}</p>
       <p class="desc">By {{course.author}}</p>
       <p class="desc">On {{course.days.join(', ')}} from {{course.time[0]}} to {{course.time[1]}}</p>
+      <p class="error" *ngIf="conflictedCourse === course">
+        <img src="../../../assets/images/error-16x16.png" height="16" width="16"/>
+        This course conflicts with an already selected one!
+        </p>
     </li>
   </ul>
 </div>

@@ -14,13 +14,25 @@ import { Calendar } from "./components/calendar/calendar";
 export class AppComponent {
   title = 'Coursera';
   calendar = new Calendar();
+  conflictedCourse: Course;
 
   // Adds/removes the course from the calendar when the user selects it.
   onCourseClick(course: Course) {
+    let courseConflict;
+
     if (this.calendar.courseAlreadyPresent(course)) {
       return this.calendar.removeCourse(course);
-    } else {
-      this.calendar.addCourse(course);
+    }
+
+    courseConflict = !this.calendar.addCourse(course);
+    if (courseConflict) {
+        this.conflictedCourse = course;
+    }
+  }
+
+  onCourseRemoveFromCalendar(course: Course) {
+    if (this.calendar.courseAlreadyPresent(course)) {
+      return this.calendar.removeCourse(course);
     }
   }
 }

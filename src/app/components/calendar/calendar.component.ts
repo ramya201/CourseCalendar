@@ -1,5 +1,6 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { Calendar } from './calendar';
+import { Course } from "../courses/course";
 
 @Component({
   selector: 'cs-calendar',
@@ -17,6 +18,9 @@ export class CalendarComponent {
   // This information too would eventually be retrieved from the backend when we start saving user's calendars.
   @Input()
   name = "Jane\'s calendar";
+
+  @Output()
+  courseRemoved = new EventEmitter<Course>();
 
   ctaImgUrls = {
     edit: "../../../assets/images/edit-24x24.png",
@@ -43,11 +47,15 @@ export class CalendarComponent {
   }
 
   isHourBlocked(day, hour) {
-    return !this.calendar.getDayByIndex(day.index).hours[hour.startTime].isFree()
+    return !day.hours[hour.startTime].isFree()
+  }
+
+  getCourseFromDayAndHour(day, hour) {
+    return day.hours[hour.startTime].course;
   }
 
   getSelectedCourseName(day, hour) {
-    let hr = this.calendar.getDayByIndex(day.index).hours[hour.startTime];
+    let hr = day.hours[hour.startTime];
     if (!hr.course) {
       return null;
     }
@@ -56,4 +64,8 @@ export class CalendarComponent {
     }
     return hr.course.name;
   }
+
+  onClick(course: Course) {
+    return this.courseRemoved.emit(course);
+  };
 }

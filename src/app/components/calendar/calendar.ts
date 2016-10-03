@@ -124,7 +124,9 @@ export class Calendar {
     if (this.canAddCourse(course)) {
       course.dayIndex.forEach((index) => this.getDayByIndex(index).addCourse(course));
       this.selectedCourses.push(course);
+      return true;
     }
+    return false;
   }
 
   canRemoveCourse(course: Course) {
@@ -135,7 +137,9 @@ export class Calendar {
     if (this.canRemoveCourse(course)) {
       course.dayIndex.forEach((index) => this.getDayByIndex(index).removeCourse(course));
       this.selectedCourses.splice(this.selectedCourses.indexOf(course), 1);
+      return true;
     }
+    return false;
   }
 
   courseAlreadyPresent(course: Course) {

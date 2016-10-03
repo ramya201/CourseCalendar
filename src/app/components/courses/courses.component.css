@@ -1,14 +1,14 @@
 .courses-container {
-  max-width: 600px;
-  max-height: 620px;
-  overflow: scroll;
   margin: 8px;
+  max-width: 600px;
 }
 
 .courses {
   margin: 8px 0;
-  list-style-type: none;
   padding: 0;
+  max-height: 550px;
+  overflow: scroll;
+  list-style-type: none;
 }
 
 .courses li {
@@ -46,5 +46,25 @@
   color: var(--cs-light-grey);
 }
 
+.courses-container input {
+  width: 97%;
+  height: 28px;
+  border: 1px solid var(--cs-dark-grey);
+  color: var(--cs-dark-grey);
+  padding-left: 5px;
+}
 
+.courses-container input:focus {
+  outline: none;
+  border: 3px solid var(--cs-green);
+}
 
+.courses-container .error {
+  font-size: 14px;
+  color: var(--cs-red);
+}
+
+.error img {
+  float: left;
+  margin-right: 4px;
+}

@@ -10,7 +10,7 @@
 }
 
 .calendar-container .name-text-box {
-  margin: 8px;
+  margin: 8px 0;
   padding: 4px;
 }
 
@@ -33,6 +33,7 @@
 }
 
 .calendar-container td {
+  position: relative;
   padding: 12px;
   max-width: 150px;
   max-height: 50px;
@@ -69,5 +70,13 @@
   display: inline-block;
   word-wrap: break-word;
   font-size: 10px;
+}
+
+.calendar-container .remove {
+  position: absolute;
+  top: -5px;
+  right: 2px;
+  font-size: 20px;
+  cursor: pointer;
 }
 

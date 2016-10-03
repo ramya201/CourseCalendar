@@ -1,6 +1,6 @@
 <div class="sidebar">
-  <cs-course-list (clicked)="onCourseClick($event)"></cs-course-list>
+  <cs-course-list (clicked)="onCourseClick($event)" [conflictedCourse]="conflictedCourse" [selectedCourses]="calendar.selectedCourses"></cs-course-list>
 </div>
 <div class="main">
-  <cs-calendar [calendar]="calendar"></cs-calendar>
+  <cs-calendar (courseRemoved)="onCourseRemoveFromCalendar($event)" [calendar]="calendar"></cs-calendar>
 </div>

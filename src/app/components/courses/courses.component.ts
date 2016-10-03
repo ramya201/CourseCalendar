@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { CoursesService } from "./courses.service";
 import { Course } from "./course";
 
@@ -11,21 +11,37 @@ import { Course } from "./course";
 
 export class CoursesComponent {
   courses: Course[];
+  filteredCourses: Course[];
+
+  @Input()
   selectedCourses: Course[] = [];
+
+  @Input()
+  conflictedCourse: Course;
 
   @Output()
   clicked = new EventEmitter<Course>();
 
   constructor() {
-    CoursesService.getCatalogOfCourses().then(courses => this.courses = courses);
+    CoursesService.getCatalogOfCourses().then(courses => {
+      this.courses = courses;
+      this.filteredCourses = courses;
+    });
   }
 
   onClick(course: Course) {
-    this.clicked.emit(course);
-    if (this.selectedCourses.indexOf(course) === -1) {
-      this.selectedCourses.push(course);
+    return this.clicked.emit(course);
+  };
+
+  filterCourses(filterValue: string) {
+    filterValue = filterValue.toLowerCase();
+
+    if (filterValue) {
+      this.filteredCourses = this.courses.filter((course) => {
+        return course.name.toLowerCase().includes(filterValue) || course.author.toLowerCase().includes(filterValue);
+      });
     } else {
-      this.selectedCourses.splice(this.selectedCourses.indexOf(course), 1);
+      this.filteredCourses = this.courses;
     }
   };
 }
