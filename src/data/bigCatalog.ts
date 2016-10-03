@@ -1,4 +1,4 @@
-import { Course } from '../app/components/courses/course';
+import { Course } from '../app/components/courses/course.model';
 
 export const BIGCATALOG: Course[] = [
   {

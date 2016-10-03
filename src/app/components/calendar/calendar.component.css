@@ -1,52 +1,52 @@
 .calendar-container {
   max-height: 620px;
-  overflow-y: scroll;
   margin: 8px;
   padding: 0 24px;
+  overflow-y: scroll;
 }
 
-.calendar-container .name-container {
+.name-container {
   display: inline-block;
 }
 
-.calendar-container .name-text-box {
+.name-text-box {
   margin: 8px 0;
   padding: 4px;
 }
 
-.calendar-container .cta {
+.cta {
   float: right;
   margin: 8px;
   cursor: pointer;
 }
 
-.calendar-container table {
+table {
   width: 100%;
   border-collapse: collapse;
   background-color: var(--cs-white);
 }
 
-.calendar-container th {
-  padding: 15px;
-  text-align: center;
+th {
+  padding: 16px;
   border: 1px solid transparent;
+  text-align: center;
 }
 
-.calendar-container td {
+td {
   position: relative;
   padding: 12px;
   max-width: 150px;
   max-height: 50px;
-  text-align: center;
   border: 1px solid var(--cs-dark-grey);
+  text-align: center;
 }
 
-.calendar-container th {
+th {
   background-color: var(--cs-green);
   color: var(--cs-white);
 }
 
-.calendar-container .hour-lbl-td {
+.hour-lbl-td {
   position: relative;
   width: 56px;
   font-size: 12px;
@@ -54,25 +54,26 @@
   background-color: var(--cs-light-grey);
 }
 
-.calendar-container .hour-lbl {
+.hour-lbl {
   position: absolute;
   top: 0;
   left: 4px;
   font-weight: 700;
 }
 
-.calendar-container td.selected {
-  background-color: var(--cs-orange);
+td.selected {
   border: none;
+  background-color: var(--cs-orange);
+  color: var(--cs-white);
 }
 
-.calendar-container .selected-course-name {
+.selected-course-name {
   display: inline-block;
   word-wrap: break-word;
-  font-size: 10px;
+  font-size: 12px;
 }
 
-.calendar-container .remove {
+.remove {
   position: absolute;
   top: -5px;
   right: 2px;

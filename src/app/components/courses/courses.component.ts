@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output} from '@angular/core';
-import { CoursesService } from "./courses.service";
-import { Course } from "./course.model";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+import { CoursesService } from './courses.service';
+import { Course } from './course.model';
 
 @Component({
   selector: 'cs-course-list',
@@ -23,16 +24,23 @@ export class CoursesComponent {
   clicked = new EventEmitter<Course>();
 
   constructor() {
+    // Reading data present in catalog.json currently. This can be changed to bigCatalog.json if required.
     CoursesService.getCatalogOfCourses().then(courses => {
       this.courses = courses;
       this.filteredCourses = courses;
     });
   }
 
+  /*
+   * Fires this event handler when a user clicks on a course.
+   */
   onClick(course: Course) {
     return this.clicked.emit(course);
   };
 
+  /*
+   * Logic to filter courses based on the search field.
+   */
   filterCourses(filterValue: string) {
     filterValue = filterValue.toLowerCase();
 

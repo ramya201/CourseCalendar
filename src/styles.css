@@ -13,7 +13,6 @@ body {
   max-width: 100%;
   margin: 0 auto;
   background-color: var(--cs-white);
-  border: 1px solid rgba(0,0,0,0.1);
 }
 
 h1 {
@@ -46,8 +45,8 @@ p {
   width: 320px;
   height: 24px;
   margin-left: 320px;
-  color: var(--cs-dark-grey);
   border: 1px solid var(--cs-dark-grey);
+  color: var(--cs-dark-grey);
 }
 
 .app-root {

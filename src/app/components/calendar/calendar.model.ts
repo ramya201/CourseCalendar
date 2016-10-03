@@ -1,4 +1,4 @@
-import { Course } from '../courses/course';
+import { Course } from '../courses/course.model';
 
 class Hour {
   startTime: number;
@@ -27,7 +27,7 @@ class Hour {
 
   getDisplayString(): string {
     var time = ((this.startTime + 11) % 12 + 1),
-        suffix = this.startTime > 12 ? 'PM' : 'AM';
+      suffix = this.startTime > 12 ? 'PM' : 'AM';
     return  time + ":00 " + suffix;
   }
 }
