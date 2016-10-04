@@ -1,9 +1,19 @@
 .sidebar {
-  width: 35%;
+  width: 35vw;
   float: left;
 }
 
 .main {
-  width: 65%;
+  width: 65vw;
   float: left;
+}
+
+@media screen and (max-width: 420px) {
+  .sidebar {
+    width: 100%;
+  }
+
+  .main {
+    width: 100%;
+  }
 }

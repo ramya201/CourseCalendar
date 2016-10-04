@@ -24,7 +24,8 @@ export class CoursesComponent {
   clicked = new EventEmitter<Course>();
 
   constructor() {
-    // Reading data present in catalog.json currently. This can be changed to bigCatalog.json if required.
+    // Reading data present in catalog.json currently. This can be changed to
+    // bigCatalog.json if required by using CoursesService.getBigCatalogOfCourses().
     CoursesService.getCatalogOfCourses().then(courses => {
       this.courses = courses;
       this.filteredCourses = courses;
