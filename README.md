@@ -1,7 +1,10 @@
 ## Info
 Project: **Coursera Calendar Challenge**
+
 Author: Ramya Balaraman
+
 LinkedIn: https://www.linkedin.com/in/ramyabalaraman
+
 E-Mail: ramya201@gmail.com
 
 ## Framework used
@@ -10,12 +13,14 @@ E-Mail: ramya201@gmail.com
 
 ## Steps to Run and Deploy the application
 
-1.	Install `npm` on your system in case you don’t have it already. Installation instructions can be found [here](https://nodejs.org/en/download/).
-2.	Unzip the source code and open it in an editor/IDE that supports Angular2/TypeScript. 
-3.	Run `npm install` on the Terminal/Command Prompt _within the project directory_ to install the dependent node modules.
-4.	Run `npm start` or `ng serve` to start a dev server.
-5.	Navigate to http://localhost:4200/ to view the application.
+1.	Install the current version of `Node JS`(v6.7.0) which includes `npm`(v3.10.3) on your system in case you don’t have it already. Installation instructions can be found [here](https://nodejs.org/en/download/).
+2.	Unzip the project and open it in an editor/IDE that supports Angular2/TypeScript to view the source code.
+3.  Run `npm install -g angular-cli` on Terminal.
+3.	Run `npm install` on the Terminal _within the project directory_ to install the dependent node modules. In case this fails, please ensure that you have the current version of `npm` (v3.10.3).
+4.	Run `npm start` or `ng serve` to start a dev server. In case this fails with a `You have to be be inside an angular-cli project to use...` error, please try `npm install --save angular2` followed by `npm install --save angular-cli` within the project directory and then try again.
+5.	Navigate to [http://localhost:4200/](http://localhost:4200/) to view the application.
 
+**Note** - 
 ## Demo
 
  ![CourseraCalendarDemo.gif](CourseraCalendarDemo.gif)
