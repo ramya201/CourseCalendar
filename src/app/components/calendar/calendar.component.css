@@ -88,7 +88,7 @@ td.selected {
   cursor: pointer;
 }
 
-@media screen and (max-height: 720px) {
+@media screen and (max-width: 420px) {
   .calendar-container {
     margin: 16px 0 8px 0;
     padding: 0 8px;
